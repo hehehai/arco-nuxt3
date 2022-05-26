@@ -13,6 +13,7 @@
 <a href="https://stackblitz.com/github/hehehai/arco-nuxt3"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt=""></a>
 </p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5d60cb09-4ab1-4e87-9fc2-20e6a604eaa7/deploy-status)](https://app.netlify.com/sites/arco-nuxt3/deploys)
 ## Features
 
 - [💚 Nuxt 3](https://v3.nuxtjs.org) - SSR, ESR, File-based routing, components auto importing, modules, etc.
