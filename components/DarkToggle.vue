@@ -1,8 +1,22 @@
 <script setup lang="ts">
 const color = useColorMode()
+const isDark = useDark({
+  selector: 'body',
+  attribute: 'arco-theme',
+  valueDark: 'dark',
+  valueLight: 'light',
+  storageKey: 'arco-theme',
+})
 
 function toggleDark() {
-  color.preference = color.value === 'dark' ? 'light' : 'dark'
+  if (color.value === 'dark') {
+    isDark.value = false
+    color.preference = 'light'
+  }
+  else {
+    isDark.value = true
+    color.preference = 'dark'
+  }
 }
 </script>
 
