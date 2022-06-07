@@ -20,6 +20,8 @@
 
 - [🥰 Arco Vue](https://arco.design) - Intelligent design syster Connect swift experience
 
+- 🐝 Arco Component Auto import and can config module
+
 - ⚡️ Vite - Instant HMR
 
 - 🎨 [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
@@ -46,6 +48,28 @@
 - [ColorMode](https://github.com/nuxt-community/color-mode-module) - dark and Light mode with auto detection made easy with Nuxt.
 - [UnoCSS](https://github.com/antfu/unocss) - the instant on-demand atomic CSS engine.
 - [Pinia](https://pinia.esm.dev/) - intuitive, type safe, light and flexible Store for Vue.
+
+### Arco Module
+
+```ts
+interface ArcoNuxtModuleOptions {
+  // auto import icon [false]
+  icon?: boolean
+  // component prefix [a]
+  prefix?: string
+}
+```
+
+```ts
+export default defineNuxtConfig({
+  // ...
+  modules: [
+    // ...
+    ['./modules/arco', { icon: true, prefix: 'a' }],
+  ],
+  // ...
+})
+```
 
 ## IDE
 
