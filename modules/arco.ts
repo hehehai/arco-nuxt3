@@ -3,121 +3,121 @@ import { addComponent, addComponentsDir, defineNuxtModule } from '@nuxt/kit'
 
 const matchComponents = [
   {
-    name: 'AnchorLink',
+    names: ['AnchorLink'],
     componentDir: 'anchor',
   },
   {
-    name: 'AvatarGroup',
+    names: ['AvatarGroup'],
     componentDir: 'avatar',
   },
   {
-    name: 'BreadcrumbItem',
+    names: ['BreadcrumbItem'],
     componentDir: 'breadcrumb',
   },
   {
-    name: 'ButtonGroup',
+    names: ['ButtonGroup'],
     componentDir: 'button',
   },
   {
-    name: ['CardMeta', 'CardGrid'],
+    names: ['CardMeta', 'CardGrid'],
     componentDir: 'card',
   },
   {
-    name: 'CarouselItem',
+    names: ['CarouselItem'],
     componentDir: 'carousel',
   },
   {
-    name: 'CascaderPanel',
+    names: ['CascaderPanel'],
     componentDir: 'cascader',
   },
   {
-    name: 'CheckboxGroup',
+    names: ['CheckboxGroup'],
     componentDir: 'checkbox',
   },
   {
-    name: 'CollapseItem',
+    names: ['CollapseItem'],
     componentDir: 'collapse',
   },
   {
-    name: ['WeekPicker', 'MonthPicker', 'YearPicker', 'QuarterPicker', 'RangePicker'],
+    names: ['WeekPicker', 'MonthPicker', 'YearPicker', 'QuarterPicker', 'RangePicker'],
     componentDir: 'date-picker',
   },
   {
-    name: 'DescriptionsItem',
+    names: ['DescriptionsItem'],
     componentDir: 'descriptions',
   },
   {
-    name: ['Doption', 'Dgroup', 'Dsubmenu', 'DropdownButton'],
+    names: ['Doption', 'Dgroup', 'Dsubmenu', 'DropdownButton'],
     componentDir: 'dropdown',
   },
   {
-    name: 'FormItem',
+    names: ['FormItem'],
     componentDir: 'form',
   },
   {
-    name: ['Col', 'Row', 'GridItem'],
+    names: ['Col', 'Row', 'GridItem'],
     componentDir: 'grid',
   },
   {
-    name: ['ImagePreview', 'ImagePreviewGroup'],
+    names: ['ImagePreview', 'ImagePreviewGroup'],
     componentDir: 'image',
   },
   {
-    name: ['InputGroup', 'InputSearch', 'InputPassword'],
+    names: ['InputGroup', 'InputSearch', 'InputPassword'],
     componentDir: 'input',
   },
 
   {
-    name: ['LayoutHeader', 'LayoutContent', 'LayoutFooter', 'LayoutSider'],
+    names: ['LayoutHeader', 'LayoutContent', 'LayoutFooter', 'LayoutSider'],
     componentDir: 'layout',
   },
   {
-    name: ['ListItem', 'ListItemMeta'],
+    names: ['ListItem', 'ListItemMeta'],
     componentDir: 'list',
   },
   {
-    name: ['MenuItem', 'MenuItemGroup', 'SubMenu'],
+    names: ['MenuItem', 'MenuItemGroup', 'SubMenu'],
     componentDir: 'menu',
   },
   {
-    name: 'RadioGroup',
+    names: ['RadioGroup'],
     componentDir: 'radio',
   },
   {
-    name: ['Option', 'Optgroup'],
+    names: ['Option', 'Optgroup'],
     componentDir: 'select',
   },
 
   {
-    name: ['SkeletonLine', 'SkeletonShape'],
+    names: ['SkeletonLine', 'SkeletonShape'],
     componentDir: 'skeleton',
   },
   {
-    name: 'Countdown',
+    names: ['Countdown'],
     componentDir: 'statistic',
   },
   {
-    name: 'Step',
+    names: ['Step'],
     componentDir: 'steps',
   },
   {
-    name: ['Thead', 'Td', 'Th', 'Tr', 'Tbody', 'TableColumn'],
+    names: ['Thead', 'Td', 'Th', 'Tr', 'Tbody', 'TableColumn'],
     componentDir: 'table',
   },
   {
-    name: 'TagGroup',
+    names: ['TagGroup'],
     componentDir: 'tag',
   },
   {
-    name: 'TabPane',
+    names: ['TabPane'],
     componentDir: 'tabs',
   },
   {
-    name: 'TimelineItem',
+    names: ['TimelineItem'],
     componentDir: 'timeline',
   },
   {
-    name: ['TypographyParagraph', 'TypographyTitle', 'TypographyText'],
+    names: ['TypographyParagraph', 'TypographyTitle', 'TypographyText'],
     componentDir: 'typography',
   },
 ]
@@ -147,11 +147,13 @@ export default defineNuxtModule<{
     })
 
     matchComponents.forEach((component) => {
-      addComponent({
-        name: prefix.toUpperCase() + component.name,
-        filePath: fileURLToPath(
-          new URL(`../node_modules/@arco-design/web-vue/es/${component.componentDir}/index.js`, import.meta.url),
-        ),
+      component.names.forEach((name) => {
+        addComponent({
+          name: prefix.toUpperCase() + name,
+          filePath: fileURLToPath(
+            new URL(`../node_modules/@arco-design/web-vue/es/${component.componentDir}/index.js`, import.meta.url),
+          ),
+        })
       })
     })
 
