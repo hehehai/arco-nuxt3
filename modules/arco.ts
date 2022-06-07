@@ -1,6 +1,13 @@
 import { fileURLToPath } from 'node:url'
 import { addComponent, addComponentsDir, defineNuxtModule } from '@nuxt/kit'
 
+export interface ArcoNuxtModuleOptions {
+  // auto import icon [false]
+  icon?: boolean
+  // component prefix [a]
+  prefix?: string
+}
+
 const matchComponents = [
   {
     names: ['AnchorLink'],
@@ -122,10 +129,7 @@ const matchComponents = [
   },
 ]
 
-export default defineNuxtModule<{
-  icon: boolean
-  prefix: string
-}>({
+export default defineNuxtModule<ArcoNuxtModuleOptions>({
   setup(options, nuxt) {
     const prefix = options.prefix ?? 'a'
 
