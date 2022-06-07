@@ -7,6 +7,9 @@
     "start": "node .output/server/index.mjs",
     "lint": "eslint ."
   },
+  "dependencies": {
+    "@arco-design/web-vue": "^2.28.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.0",
     "@iconify-json/carbon": "^1.1.4",
@@ -19,8 +22,5 @@
     "nuxt": "^3.0.0-rc.3",
     "pinia": "^2.0.14",
     "typescript": "^4.6.4"
-  },
-  "dependencies": {
-    "@arco-design/web-vue": "^2.28.0"
   }
 }
